@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contract — Confirm</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="customer-management.html">Customer Management</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="max-width:700px;margin:0 auto">
+            <div class="step-indicator" style="margin-bottom:24px">
+                <div class="step done">1. Search Customer</div>
+                <div class="step done">2. Select Apartment</div>
+                <div class="step done">3. Select Service</div>
+                <div class="step active">4. Confirm</div>
+            </div>
+            <div class="card-title">Step 4 — Confirm Contract</div>
+            <div style="background:#f8f9fa;border-radius:8px;padding:16px;margin-bottom:20px">
+                <div class="confirm-row">
+                    <span class="confirm-label">Customer</span>
+                    <span class="confirm-value" id="cfCustomer"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Apartment</span>
+                    <span class="confirm-value" id="cfApartment"></span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Electric Service</span>
+                    <span class="confirm-value" id="cfService"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Effective Date <span style="color:red">*</span></label>
+                    <input type="date" id="effectiveDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Expiry Date <span style="color:#888;font-weight:400">(optional)</span></label>
+                    <input type="date" id="expiryDate">
+                </div>
+            </div>
+            <div style="margin-top:16px;display:flex;gap:10px">
+                <button class="btn btn-secondary" onclick="location.href='contract-service.html'">← Back</button>
+                <button id="submitBtn" class="btn btn-success">✓ Confirm &amp; Save Contract</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/model/ContractModel.js"></script>
+    <script src="../js/controller/ContractConfirmController.js"></script>
+</body>
+
+</html>

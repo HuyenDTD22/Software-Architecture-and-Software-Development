@@ -1,0 +1,94 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; color: #333; font-size: 14px; }
+
+.navbar {
+    background: #1a73e8; color: white;
+    padding: 14px 24px; display: flex;
+    justify-content: space-between; align-items: center;
+}
+.navbar-brand { font-weight: 600; font-size: 16px; }
+.navbar a { color: white; text-decoration: none; margin-left: 20px; font-size: 14px; }
+.navbar a:hover { text-decoration: underline; }
+
+.container { max-width: 1100px; margin: 28px auto; padding: 0 20px; }
+
+.card {
+    background: white; border-radius: 10px;
+    padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+.card-title { font-size: 17px; font-weight: 600; color: #1a73e8; margin-bottom: 18px; }
+
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 13px; color: #555; margin-bottom: 5px; font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 9px 12px;
+    border: 1px solid #ddd; border-radius: 6px;
+    font-size: 14px; outline: none; transition: border-color .2s;
+}
+.form-group input:focus, .form-group select:focus { border-color: #1a73e8; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+
+.btn {
+    padding: 9px 20px; border: none; border-radius: 6px;
+    font-size: 14px; cursor: pointer; transition: opacity .2s; font-weight: 500;
+}
+.btn:hover { opacity: .85; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-primary   { background: #1a73e8; color: white; }
+.btn-success   { background: #28a745; color: white; }
+.btn-secondary { background: #6c757d; color: white; }
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #f8f9fa; padding: 10px 12px; text-align: left; font-weight: 600; border-bottom: 2px solid #dee2e6; white-space: nowrap; }
+td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+tr:hover td { background: #fafafa; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+.badge-success { background: #d4edda; color: #155724; }
+.badge-danger  { background: #f8d7da; color: #721c24; }
+
+.login-wrapper { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f0f2f5; }
+.login-box {
+    background: white; padding: 40px; border-radius: 12px;
+    width: 380px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.login-box h1 { text-align: center; color: #1a73e8; margin-bottom: 6px; font-size: 22px; }
+.login-box p  { text-align: center; color: #888; font-size: 13px; margin-bottom: 24px; }
+
+.step-indicator { display: flex; gap: 6px; margin-bottom: 24px; }
+.step { flex: 1; text-align: center; padding: 8px 4px; border-radius: 6px; font-size: 12px; font-weight: 500; background: #f0f2f5; color: #888; }
+.step.active { background: #1a73e8; color: white; }
+.step.done   { background: #d4edda; color: #155724; }
+
+.search-item {
+    padding: 10px 14px; border: 1px solid #e0e0e0;
+    border-radius: 6px; margin-bottom: 6px;
+    cursor: pointer; transition: all .15s;
+}
+.search-item:hover { background: #e8f0fe; border-color: #1a73e8; }
+.search-item.selected { background: #e8f0fe; border-color: #1a73e8; }
+
+.info-box { background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 6px; padding: 10px 14px; font-size: 13px; margin-top: 10px; }
+.confirm-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f0f0f0; }
+.confirm-row:last-child { border-bottom: none; }
+.confirm-label { color: #666; }
+.confirm-value { font-weight: 500; }
+
+.rank-1 td:first-child { color: #f4a200; font-weight: 700; font-size: 16px; }
+.rank-2 td:first-child { color: #888;    font-weight: 700; }
+.rank-3 td:first-child { color: #cd7f32; font-weight: 700; }
+
+.dashboard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.dashboard-card {
+    background: white; border-radius: 10px; padding: 28px 20px;
+    text-align: center; cursor: pointer; transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.dashboard-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+.dashboard-card .icon { font-size: 38px; margin-bottom: 12px; }
+.dashboard-card h3 { font-size: 15px; font-weight: 600; color: #333; }
+.dashboard-card p  { font-size: 12px; color: #888; margin-top: 6px; }

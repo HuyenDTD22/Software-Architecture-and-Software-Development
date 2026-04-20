@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard — Electric Service Management</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="customer-management.html">Customers</a>
+            <a href="contract-search.html">New Contract</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div style="margin-bottom:20px">
+            <h2 style="font-size:20px;color:#333">Welcome back, <span id="welcomeName"></span></h2>
+            <p style="color:#888;font-size:13px;margin-top:4px">Select a module to get started</p>
+        </div>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="icon">👤</div>
+                <h3>Customer Management</h3>
+                <p>Add and manage customers</p>
+                <button class="btn btn-primary" style="margin-top:12px;width:100%"
+                    onclick="location.href='customer-management.html'">
+                    Customer Management
+                </button>
+            </div>
+            <div class="dashboard-card">
+                <div class="icon">📄</div>
+                <h3>Sign Contract</h3>
+                <p>Create electric service contracts</p>
+                <button class="btn btn-primary" style="margin-top:12px;width:100%"
+                    onclick="location.href='customer-search.html'">
+                    Sign Contract
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/controller/DashboardController.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management — Electric Service Management</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="contract-search.html">New Contract</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-title">Customer Management</div>
+            <div style="margin-bottom:18px">
+                <button class="btn btn-success" onclick="location.href='customer-add.html'">+ Add Customer</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/controller/CustomerManagementController.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contract — Select Apartment</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="customer-list.html">Customer Management</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="max-width:800px;margin:0 auto">
+            <div class="step-indicator" style="margin-bottom:24px">
+                <div class="step done">1. Search Customer</div>
+                <div class="step active">2. Select Apartment</div>
+                <div class="step">3. Select Service</div>
+                <div class="step">4. Confirm</div>
+            </div>
+            <div class="card-title">Step 2 — Select Apartment</div>
+            <div id="customerInfoBox" class="info-box" style="margin-bottom:16px"></div>
+
+            <div id="apartmentArea">
+                <p id="loadingMsg" style="text-align:center;color:#888;padding:16px">Loading apartments...</p>
+                <p id="emptyMsg" style="display:none;text-align:center;color:#888;padding:16px">No available apartments
+                    for this customer</p>
+                <p id="errorMsg" style="display:none;text-align:center;color:#c00;padding:16px">Failed to load
+                    apartments</p>
+                <table id="apartmentTable" style="display:none">
+                    <thead>
+                        <tr>
+                            <th style="width:40px"></th>
+                            <th>Apartment Code</th>
+                            <th>Address</th>
+                            <th>Area (m²)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="apartmentTableBody"></tbody>
+                </table>
+            </div>
+
+            <template id="apartmentRowTemplate">
+                <tr style="cursor:pointer">
+                    <td><input type="radio" name="aptRadio"></td>
+                    <td class="col-apartmentCode"></td>
+                    <td class="col-address"></td>
+                    <td class="col-area"></td>
+                    <td><span class="col-status badge"></span></td>
+                </tr>
+            </template>
+
+            <div style="margin-top:16px;display:flex;gap:10px">
+                <button class="btn btn-secondary" onclick="location.href='customer-search.html'">← Back</button>
+                <button id="nextBtn" class="btn btn-success" style="display:none" onclick="controller.goNext()">Next:
+                    Select Service →</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/model/ApartmentModel.js"></script>
+    <script src="../js/controller/ContractApartmentController.js"></script>
+</body>
+
+</html>

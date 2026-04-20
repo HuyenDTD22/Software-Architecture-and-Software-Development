@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contract — Search Customer</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="customer-list.html">Customer Management</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="max-width:800px;margin:0 auto">
+            <div class="step-indicator" style="margin-bottom:24px">
+                <div class="step active">1. Search Customer</div>
+                <div class="step">2. Select Apartment</div>
+                <div class="step">3. Select Service</div>
+                <div class="step">4. Confirm</div>
+            </div>
+            <div class="card-title">Step 1 — Search Customer</div>
+            <div style="display:flex;gap:10px;margin-bottom:16px">
+                <input type="text" id="searchInput" placeholder="Search by ID card..."
+                    style="flex:1;padding:9px 12px;border:1px solid #ddd;border-radius:6px;font-size:14px">
+                <button id="searchBtn" class="btn btn-primary">Search</button>
+            </div>
+
+            <div id="resultArea">
+                <table id="customerTable" style="display:none">
+                    <thead>
+                        <tr>
+                            <th style="width:40px"></th>
+                            <th>Full Name</th>
+                            <th>ID Card</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customerTableBody"></tbody>
+                </table>
+                <p id="noResultMsg" style="display:none;text-align:center;color:#888;padding:16px">
+                    No customer found
+                </p>
+            </div>
+
+            <template id="customerRowTemplate">
+                <tr style="cursor:pointer">
+                    <td><input type="radio" name="customerRadio"></td>
+                    <td class="col-fullName"></td>
+                    <td class="col-idCard"></td>
+                    <td class="col-phone"></td>
+                    <td class="col-email"></td>
+                    <td><span class="col-status badge"></span></td>
+                </tr>
+            </template>
+
+            <div style="margin-top:16px">
+                <button id="nextBtn" class="btn btn-success" style="display:none" onclick="controller.goNext()">Next:
+                    Select Apartment →</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/model/CustomerModel.js"></script>
+    <script src="../js/controller/CustomerSearchController.js"></script>
+</body>
+
+</html>

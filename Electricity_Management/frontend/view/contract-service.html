@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contract — Select Service</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-brand">⚡ Electric Service Management</span>
+        <div>
+            <span id="employeeName" style="margin-right:16px;opacity:.9"></span>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="customer-list.html">Customer Management</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card" style="max-width:800px;margin:0 auto">
+            <div class="step-indicator" style="margin-bottom:24px">
+                <div class="step done">1. Search Customer</div>
+                <div class="step done">2. Select Apartment</div>
+                <div class="step active">3. Select Service</div>
+                <div class="step">4. Confirm</div>
+            </div>
+            <div class="card-title">Step 3 — Select Electric Service</div>
+            <div id="summaryBox" class="info-box" style="margin-bottom:16px"></div>
+
+            <div id="serviceArea">
+                <p id="loadingMsg" style="color:#888;padding:8px">Loading services...</p>
+                <p id="emptyMsg" style="display:none;color:#888;padding:8px">No services available</p>
+                <table id="serviceTable" style="display:none">
+                    <thead>
+                        <tr>
+                            <th style="width:40px"></th>
+                            <th>Service Name</th>
+                            <th>Description</th>
+                            <th>Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody id="serviceTableBody"></tbody>
+                </table>
+            </div>
+
+            <template id="serviceRowTemplate">
+                <tr style="cursor:pointer">
+                    <td><input type="radio" name="svcRadio"></td>
+                    <td class="col-serviceName"></td>
+                    <td class="col-description"></td>
+                    <td class="col-unit"></td>
+                </tr>
+            </template>
+
+            <div id="pricingBox" style="display:none;margin-top:20px">
+                <div style="font-size:14px;font-weight:600;color:#333;margin-bottom:10px">
+                    Price Tiers for Selected Service:
+                </div>
+                <table id="pricingTable" style="display:none">
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>From (kWh)</th>
+                            <th>To (kWh)</th>
+                            <th>Unit Price (VND/kWh)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pricingTableBody"></tbody>
+                </table>
+            </div>
+
+            <template id="pricingRowTemplate">
+                <tr>
+                    <td class="col-tierOrder"></td>
+                    <td class="col-fromKwh"></td>
+                    <td class="col-toKwh"></td>
+                    <td class="col-unitPrice"></td>
+                </tr>
+            </template>
+
+            <div style="margin-top:20px;display:flex;gap:10px">
+                <button class="btn btn-secondary" onclick="location.href='contract-apartment.html'">← Back</button>
+                <button id="nextBtn" class="btn btn-success" style="display:none" onclick="controller.goNext()">Next:
+                    Confirm →</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script src="../js/model/ElectricServiceModel.js"></script>
+    <script src="../js/controller/ContractServiceController.js"></script>
+</body>
+
+</html>
